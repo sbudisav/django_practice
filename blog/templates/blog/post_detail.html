@@ -4,5 +4,6 @@
     <h3> {{ post.title }} </h3>
     {{ post.text }} <br>
     Blog post by: {{ post.author }} <hr>
-    <a href="{% url 'post_list' %}"> go back </a>
+    <a href="{% url 'post_edit' pk=post.pk %}">Edit</a>
+    <a href="{% url 'post_list' %}">Go Back</a>
 {% endblock %}
