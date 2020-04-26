@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Plant
-from dnajgo.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 
 # Create your views here.
 
