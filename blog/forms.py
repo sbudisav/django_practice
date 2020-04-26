@@ -24,6 +24,6 @@ class PostForm(forms.ModelForm):
   # Wait what are attrs in general
   # widget too, whats going on there? 
   # Widget is probably a good place to look
-    class Meta:
-        model = Post
-        fields = ('title', 'text',)
+  class Meta:
+      model = Post
+      fields = ('title', 'text',)
