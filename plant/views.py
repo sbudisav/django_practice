@@ -2,6 +2,9 @@ from django.shortcuts import render
 from .models import Plant
 from django.shortcuts import render, redirect, get_object_or_404
 
+# from django.views import View
+# from django.http import HttpResonse 
+
 # Create your views here.
 
 def plant_list(request):
@@ -15,3 +18,5 @@ def plant_detail(request, pk):
 
 # Note: no need for new or edit, as that will be handled from admin page.
 # If we are to build a schedule do we do it here or do we do it from a scheduling app? 
+
+# class PlantView(View):

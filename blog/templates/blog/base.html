@@ -1,27 +1,17 @@
-{% load static %}
-<html>
+{% extends 'templates/main.html' %}
 
-  <head>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    <title>Django</title>
-  </head>
+{% block content %}
+  <div class="page-header">
+    <h1><a href="/">Django Blog</a></h1>
+    {% if user.is_authenticated %}
+      <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+    {% endif %}
+  </div>
 
-  <body>
-      <div class="page-header">
-        <h1><a href="/">Django Blog</a></h1>
-        {% if user.is_authenticated %}
-          <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-        {% endif %}
+  <div class="content container">
+      <div class="row">
+        {% block page %}
+        {% endblock %}
       </div>
-
-      <div class="content container">
-          <div class="row">
-            {% block content %}
-            {% endblock %}
-          </div>
-      </div>
-  </body>
-
-</html>
+  </div>
+{% endblock %}
