@@ -50,7 +50,7 @@
     {% block content %}
     {% endblock %}
 
-    <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal" tabindex="-1" role="dialog" id="register-modal">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -61,7 +61,10 @@
           </div>
           <div class="modal-body">
 
-            <p>Modal body text goes here.</p>
+                <form method="POST">
+                  {% csrf_token %}
+                  {{form}}
+                </form>
 
           </div>
           <div class="modal-footer">
@@ -72,7 +75,7 @@
       </div>
     </div>
 
-    <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal" tabindex="-1" role="dialog" id="log-in-modal">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
