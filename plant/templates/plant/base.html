@@ -1,29 +1,18 @@
-<!-- {% load static %} -->
+{% extends 'templates/main.html' %}
 
-<html>
+{% block content %}
+  <div class="page-header">
+    <h1><a href="/plants/">All Plants</a></h1>
+    {% if user.is_authenticated %}
 
-  <head>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static 'css/plant.css' %}">
-    <title>Plants</title>
-  </head>
+      <h2> This is checking if user is authenticated </h2>
+    {% endif %}
+  </div>
 
-  <body>
-      <div class="page-header">
-        <h1><a href="/plants/">All Plants</a></h1>
-        {% if user.is_authenticated %}
-
-          <h2> This is checking if user is authenticated </h2>
-        {% endif %}
+  <div class="content container">
+      <div class="row">
+        {% block page %}
+        {% endblock %}
       </div>
-
-      <div class="content container">
-          <div class="row">
-            {% block content %}
-            {% endblock %}
-          </div>
-      </div>
-  </body>
-
-</html>
+  </div>
+{% endblock %}

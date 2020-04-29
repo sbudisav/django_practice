@@ -1,6 +1,6 @@
 {% extends 'plant/base.html' %}
 
-{% block content %}
+{% block page %}
   {% for plant in plants %}
     <h3><a href="{% url 'plant_detail' pk=plant.pk %}"> {{ plant.name }} </a></h3>
     <p>{{ plant.bionominal }}
