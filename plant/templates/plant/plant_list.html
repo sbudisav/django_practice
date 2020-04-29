@@ -2,7 +2,12 @@
 
 {% block page %}
   {% for plant in plants %}
-    <h3><a href="{% url 'plant_detail' pk=plant.pk %}"> {{ plant.name }} </a></h3>
-    <p>{{ plant.bionominal }}
+    <div class="card" style="width: 24rem;">
+      <div class="card-body">
+        <h3 class="card-title"><a href="{% url 'plant_detail' pk=plant.pk %}"> {{ plant.name }} </a></h3>
+        <h5 class="card-subtitle mb-2 text-muted">{{ plant.bionominal }}</h5>
+        <p class="card-text"> {{ plant.description }} </p>
+      </div>
+    </div>
   {% endfor %}
 {% endblock %}

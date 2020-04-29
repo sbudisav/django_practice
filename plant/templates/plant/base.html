@@ -3,13 +3,9 @@
 {% block content %}
   <div class="page-header">
     <h1><a href="/plants/">All Plants</a></h1>
-    {% if user.is_authenticated %}
-
-      <h2> This is checking if user is authenticated </h2>
-    {% endif %}
   </div>
 
-  <div class="content container">
+  <div id="plant-list" class="content container">
       <div class="row">
         {% block page %}
         {% endblock %}
